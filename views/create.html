@@ -1,0 +1,59 @@
+<h1>Create</h1>
+<div ng-controller="CreateController">
+  <div ng-if="success">
+    <h3 style="color:green">Created!</h3>
+  </div>
+  <div ng-if="error">
+    <h3 style="color:red">Error!</h3>
+  </div>
+  <form name="tShirtForm">
+    <table>
+      <tbody>
+        <tr>
+          <td><label>Model:</label></td>
+          <td><input type="text" ng-model="tShirt.model" required></td>
+        </tr>
+        <tr>
+          <td><label>Style:</label></td>
+          <td>
+            <select ng-model="tShirt.style" required>
+              <option value="Casual">Casual</option>
+              <option value="Vintage">Vintage</option>
+              <option value="Alternative">Alternative</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Size:</label></td>
+          <td>
+            <select ng-model="tShirt.size" required>
+              <option value="36">36</option>
+              <option value="38">38</option>
+              <option value="40">40</option>
+              <option value="42">42</option>
+              <option value="44">44</option>
+              <option value="46">46</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Color:</label></td>
+          <td><input type="text" ng-model="tShirt.color"></td>
+        </tr>
+        <tr>
+          <td><label>Price:</label></td>
+          <td><input type="number" ng-model="tShirt.price" required></td>
+        </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="text-align:left"><a href="#">Back</a></td>
+        <td style="text-align:right"><button ng-click="create(tShirt)" ng-disabled="tShirtForm.$invalid">Add</button></td>
+      </tr>
+      </tfoot>
+    </table>
+  </form>
+</div>

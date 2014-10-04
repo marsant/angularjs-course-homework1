@@ -1,0 +1,41 @@
+<h1>Read</h1>
+<div ng-controller="ReadController">
+  <div ng-if="loading">
+    <h3>Loading...</h3>
+  </div>
+  <div ng-if="success">
+    <table cellpadding="5">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Model</th>
+          <th>Style</th>
+          <th>Size</th>
+          <th>Color</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="tShirt in tShirts">
+          <td style="text-align:right">{{$index}}</td>
+          <td>{{tShirt.model}}</td>
+          <td>{{tShirt.style}}</td>
+          <td style="text-align:right">{{tShirt.size}}</td>
+          <td>{{tShirt.color}}</td>
+          <td style="text-align:right">{{tShirt.price}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="6" style="text-align:right"><a href="#">Back</a></td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+  <div ng-if="error">
+    <h3 style="color:red">Error!</h3>
+  </div>
+</div>
