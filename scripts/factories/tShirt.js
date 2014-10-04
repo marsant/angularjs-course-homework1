@@ -25,10 +25,14 @@ app.factory('tShirt', ['$http', '$q', function($http, $q) {
       $http({
         method: 'POST',
         url: url,
-        data: obj,
+        data: {
+          model: obj.model,
+          style: obj.style,
+          size: obj.size,
+          color: obj.color,
+          price: obj.price
+        },
         headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
           'Content-Type': 'application/json'
         }
       })
