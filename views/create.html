@@ -11,12 +11,12 @@
       <tbody>
         <tr>
           <td><label>Model:</label></td>
-          <td><input type="text" ng-model="tShirt.model" required></td>
-        </tr>
+          <td><input type="text" ng-model="formData.model" required></td>
+          </tr>
         <tr>
           <td><label>Style:</label></td>
           <td>
-            <select ng-model="tShirt.style" required>
+            <select ng-model="formData.style" required>
               <option value="Casual">Casual</option>
               <option value="Vintage">Vintage</option>
               <option value="Alternative">Alternative</option>
@@ -26,7 +26,7 @@
         <tr>
           <td><label>Size:</label></td>
           <td>
-            <select ng-model="tShirt.size" required>
+            <select ng-model="formData.size" required>
               <option value="36">36</option>
               <option value="38">38</option>
               <option value="40">40</option>
@@ -38,11 +38,11 @@
         </tr>
         <tr>
           <td><label>Color:</label></td>
-          <td><input type="text" ng-model="tShirt.color"></td>
+          <td><input type="text" ng-model="formData.color"></td>
         </tr>
         <tr>
           <td><label>Price:</label></td>
-          <td><input type="number" ng-model="tShirt.price" required></td>
+          <td><input type="number" ng-model="formData.price" required></td>
         </tr>
       </tbody>
       <tfoot>
@@ -51,7 +51,7 @@
       </tr>
       <tr>
         <td style="text-align:left"><a href="#">Back</a></td>
-        <td style="text-align:right"><button ng-click="create(tShirt)" ng-disabled="tShirtForm.$invalid">Add</button></td>
+        <td style="text-align:right"><button ng-click="create(formData)" ng-disabled="formData.$invalid">Add</button></td>
       </tr>
       </tfoot>
     </table>

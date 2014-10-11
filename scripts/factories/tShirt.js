@@ -19,21 +19,27 @@ app.factory('tShirt', ['$http', '$q', function($http, $q) {
 
       return defer.promise;
     },
-    create: function(obj) {
+    create: function(formData) {
       var defer = $q.defer();
 
       $http({
         method: 'POST',
         url: url,
-        data: {
-          model: obj.model,
-          style: obj.style,
-          size: obj.size,
-          color: obj.color,
-          price: obj.price
-        },
+        // data: formData,
+        data: $.param(formData),
+        /*data: {
+          model: formData.model,
+          style: formData.style,
+          size: formData.size,
+          color: formData.color,
+          price: formData.price
+        },*/
         headers: {
-          'Content-Type': 'application/json'
+          /*'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'PUT, GET, POST, DELETE, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+          'Content-Type': 'application/json'*/
+          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
         }
       })
       .success(function(data, status, headers, config){
